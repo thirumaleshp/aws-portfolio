@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "PowerShell(aws amplify create-app --name aws-portfolio --platform WEB --region ap-south-1 --output json)"
-    ]
-  }
-}

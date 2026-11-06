@@ -15,7 +15,7 @@ https://main.d2kch2pensq2r2.amplifyapp.com
 
 ## GitHub repository
 
-**[your repo URL once pushed]**
+https://github.com/thirumaleshp/aws-portfolio
 
 ---
 
@@ -130,7 +130,7 @@ In [`screenshots/`](screenshots/):
 
 ## Before you submit — checklist
 
-- [ ] Push the repo to GitHub, make it public, and add the URL above
+- [x] Push the repo to GitHub, make it public, and add the URL above
 - [ ] Screenshot the Amplify console and drop it in `screenshots/`
 - [ ] Read through the `secrets` array in `js/content.js` — those lines get dispensed by `superpower`, so make sure they sound like you
 - [ ] Open the live URL on your actual phone and click through it once

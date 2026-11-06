@@ -3,6 +3,7 @@
 A personal portfolio site with a **working terminal** built into it, deployed globally on **AWS Amplify Hosting**.
 
 **Live site:** https://main.d2kch2pensq2r2.amplifyapp.com
+**Repository:** https://github.com/thirumaleshp/aws-portfolio
 
 ---
 
