@@ -238,6 +238,19 @@
       },
     },
 
+    experience: {
+      desc: "where I've worked and what I shipped",
+      run() {
+        line(rule("experience"));
+        (C().experience || []).forEach((x) => {
+          line(`  <span class="tl--acc2">${esc(x.title)}</span>`);
+          line(`  <span class="tl--acc">${esc(x.org)}</span> <span class="tl--dim">· ${esc(x.date)}</span>`);
+          x.bullets.forEach((b) => line(`    <span class="tl--dim">- ${esc(b)}</span>`));
+          sp();
+        });
+      },
+    },
+
     achievements: {
       desc: "things worth mentioning",
       run() {
@@ -254,6 +267,7 @@
         line(`  ${kv("email", "", 10)}<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`);
         if (c.github) line(`  ${kv("github", "", 10)}<a href="${esc(c.github)}" target="_blank" rel="noopener">${esc(c.github)}</a>`);
         if (c.linkedin) line(`  ${kv("linkedin", "", 10)}<a href="${esc(c.linkedin)}" target="_blank" rel="noopener">${esc(c.linkedin)}</a>`);
+        if (c.twitter) line(`  ${kv("x", "", 10)}<a href="${esc(c.twitter)}" target="_blank" rel="noopener">${esc(c.twitter)}</a>`);
         sp();
         line(`<span class="tl--dim">  open to internships — say hi.</span>`);
       },
@@ -282,7 +296,8 @@
       run(args) {
         const map = {
           about: "#about", skills: "#superpowers", superpowers: "#superpowers",
-          projects: "#projects", aws: "#aws", contact: "#contact", top: "#top",
+          experience: "#experience", projects: "#projects",
+          aws: "#aws", contact: "#contact", top: "#top",
         };
         const key = (args[0] || "").toLowerCase();
         if (!map[key]) {

@@ -203,9 +203,11 @@ kbd {
   color: var(--text-dim); text-transform: lowercase;
   background: var(--surface); border: 1px solid var(--line);
   border-radius: 999px; padding: .3rem .85rem; margin: 0 0 1.6rem;
+  max-width: 100%;
 }
+.hero__eyebrowtext { min-width: 0; }
 .hero__dot {
-  width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+  width: 7px; height: 7px; flex-shrink: 0; border-radius: 50%; background: var(--accent);
   box-shadow: 0 0 0 0 var(--accent); animation: pulse 2.4s infinite;
 }
 @keyframes pulse {
@@ -278,6 +280,11 @@ kbd {
   color: var(--accent); font-weight: 500;
 }
 .sec__lede { color: var(--text-dim); max-width: 62ch; margin-bottom: 2.4rem; }
+.sec__lede code {
+  font-family: "JetBrains Mono", monospace; font-size: .86em;
+  background: var(--surface-2); border: 1px solid var(--line);
+  border-radius: 5px; padding: .08em .4em; color: var(--accent);
+}
 
 /* reveal on scroll */
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
@@ -331,6 +338,29 @@ kbd {
   background: var(--surface-2); border: 1px solid var(--line);
   border-radius: 6px; padding: .18rem .5rem; color: var(--text-dim);
 }
+
+/* ---------- experience ---------- */
+.xp { list-style: none; margin: 0; padding: 0 0 0 1.4rem; position: relative; display: grid; gap: 1.6rem; }
+.xp::before {
+  content: ""; position: absolute; left: 4px; top: .6rem; bottom: .6rem;
+  width: 2px; background: linear-gradient(var(--accent), transparent); border-radius: 2px;
+}
+.xp__item { position: relative; }
+.xp__item::before {
+  content: ""; position: absolute; left: -1.4rem; top: .55rem;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--bg); border: 2px solid var(--accent);
+}
+.xp__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1rem; }
+.xp__role { font-size: 1.1rem; font-weight: 700; }
+.xp__date {
+  font-family: "JetBrains Mono", monospace; font-size: .76rem;
+  color: var(--text-dim); margin-left: auto; white-space: nowrap;
+}
+.xp__org { margin: .15rem 0 .5rem; color: var(--accent-2); font-weight: 600; font-size: .94rem; }
+.xp__bullets { margin: 0; padding-left: 1.1rem; display: grid; gap: .35rem; }
+.xp__bullets li { color: var(--text-dim); font-size: .93rem; }
+.xp__bullets li::marker { color: var(--accent); }
 
 /* ---------- projects ---------- */
 .projects { display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }

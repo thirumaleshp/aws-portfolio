@@ -105,6 +105,31 @@
     });
   })();
 
+  /* ---------- experience ---------- */
+  (function experience() {
+    const host = $("#experience-list");
+    if (!host || !CONTENT.experience) return;
+
+    CONTENT.experience.forEach((x) => {
+      const org = x.url
+        ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.org)}</a>`
+        : esc(x.org);
+
+      host.append(
+        el(
+          "li",
+          "xp__item reveal",
+          `<div class="xp__head">
+             <h3 class="xp__role">${esc(x.title)}</h3>
+             <span class="xp__date">${esc(x.date)}</span>
+           </div>
+           <p class="xp__org">${org}</p>
+           <ul class="xp__bullets">${x.bullets.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>`
+        )
+      );
+    });
+  })();
+
   /* ---------- projects ---------- */
   (function projects() {
     const host = $("#projects-grid");
@@ -174,6 +199,7 @@
       { icon: "@", label: "Email", url: `mailto:${CONTENT.email}` },
       { icon: "{}", label: "GitHub", url: CONTENT.github },
       { icon: "in", label: "LinkedIn", url: CONTENT.linkedin },
+      { icon: "x", label: "X / Twitter", url: CONTENT.twitter },
     ];
     links.forEach((l) => {
       if (!l.url) return;

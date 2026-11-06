@@ -34,6 +34,7 @@
     <nav class="nav__links" aria-label="Main navigation">
       <a href="#about">About</a>
       <a href="#superpowers">Superpowers</a>
+      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -57,7 +58,7 @@
     <div class="wrap hero__inner">
       <p class="hero__eyebrow">
         <span class="hero__dot"></span>
-        <span data-bind="location">India</span> · available for internships
+        <span class="hero__eyebrowtext"><span data-bind="location">India</span> · available for internships</span>
       </p>
 
       <h1 class="hero__title">
@@ -101,11 +102,20 @@
     </div>
   </section>
 
-  <!-- ───────────── projects ───────────── -->
-  <section class="sec" id="projects">
+  <!-- ───────────── experience ───────────── -->
+  <section class="sec" id="experience">
     <div class="wrap">
-      <h2 class="sec__title"><span class="sec__num">03</span> Projects &amp; Achievements</h2>
-      <p class="sec__lede">Things I built, including the learning projects — those taught me the most.</p>
+      <h2 class="sec__title"><span class="sec__num">03</span> Experience</h2>
+      <p class="sec__lede">Where I've shipped things that other people depend on.</p>
+      <ol class="xp" id="experience-list"></ol>
+    </div>
+  </section>
+
+  <!-- ───────────── projects ───────────── -->
+  <section class="sec sec--alt" id="projects">
+    <div class="wrap">
+      <h2 class="sec__title"><span class="sec__num">04</span> Projects &amp; Achievements</h2>
+      <p class="sec__lede">Things I've built and shipped. Hit <code>cat &lt;name&gt;</code> on any card to read it in the terminal.</p>
       <div class="projects" id="projects-grid"></div>
 
       <h3 class="ach__title">Achievements</h3>
@@ -114,18 +124,18 @@
   </section>
 
   <!-- ───────────── aws ───────────── -->
-  <section class="sec sec--alt" id="aws">
+  <section class="sec" id="aws">
     <div class="wrap">
-      <h2 class="sec__title"><span class="sec__num">04</span> Built on AWS</h2>
+      <h2 class="sec__title"><span class="sec__num">05</span> Built on AWS</h2>
       <p class="sec__lede">This site isn't a mockup — here's the infrastructure actually serving it to you.</p>
       <div class="aws" id="awsStack"></div>
     </div>
   </section>
 
   <!-- ───────────── contact ───────────── -->
-  <section class="sec" id="contact">
+  <section class="sec sec--alt" id="contact">
     <div class="wrap contact">
-      <h2 class="sec__title"><span class="sec__num">05</span> Contact</h2>
+      <h2 class="sec__title"><span class="sec__num">06</span> Contact</h2>
       <p class="contact__lede">Open to internships, collaborations, and conversations about anything cloud.</p>
       <div class="contact__links" id="contactLinks"></div>
     </div>

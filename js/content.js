@@ -1,68 +1,160 @@
 /* ============================================================
    content.js — EVERY piece of personal data on this site.
    Edit this one file to change the whole portfolio.
-   Lines marked TODO are placeholders waiting on real details.
    ============================================================ */
 
 const CONTENT = {
   // ---------- Identity ----------
   name: "Thirumalesh",
-  // TODO: confirm full name
-  fullName: "Thirumalesh",
+  fullName: "Thirumalesh Pinninti",
   handle: "thiru",
-  role: "Student Developer & Cloud Builder",
-  tagline: "I build things on the internet and take them apart to see how they work.",
-  location: "India", // TODO: city
-  school: "TODO: your college / university",
-  course: "TODO: your degree & year",
-  email: "thirumalesh9182@gmail.com",
-  github: "https://github.com/", // TODO: your GitHub profile URL
-  githubUser: "TODO-github-username",
-  linkedin: "", // TODO: LinkedIn URL (leave "" to hide)
+  role: "Cloud & DevOps Engineer",
+  tagline:
+    "I build things that run in production — cloud infrastructure, full-stack apps, and the occasional compiler.",
+  location: "Hyderabad, Telangana",
+  school: "Marri Laxman Reddy Institute of Technology and Management",
+  course: "B.Tech, Computer Science (AI & ML) · 2023–2027",
+  email: "thirumaleshpinninti@gmail.com",
+  github: "https://github.com/thirumaleshp",
+  githubUser: "thirumaleshp",
+  linkedin: "https://www.linkedin.com/in/thirumalesh-pinninti/",
+  twitter: "https://x.com/Thirumaleshx",
 
   // ---------- About Me ----------
   about: [
-    "I'm a student developer who learns by shipping. Most of what I know came from breaking something, reading the error, and trying again until it worked.",
-    "Right now I'm deep in cloud and web development — figuring out how real applications get built, deployed, and kept alive once actual people start using them.",
-    "This site is part of that: built from scratch with no framework, deployed on AWS, and hiding a terminal that you can actually type into.",
+    "I'm a final-stretch CS undergrad in Hyderabad who spends most of his time on the infrastructure side of software — the part that decides whether a thing actually stays up.",
+    "That's taken me from deploying FastAPI services on Google Cloud for a home-inspection platform, to orchestrating per-user Docker containers on AWS EC2, to writing a compiler for a tactile-feedback language because I wanted one string to make a phone buzz and a gamepad rumble the same way.",
+    "I'm an AWS Cloud Captain at my college's AWS Cloud Club, a Google Student Ambassador, and I have two pull requests merged into openclaw. I like problems where the answer isn't in the docs yet.",
   ],
 
   // ---------- Tech Superpowers ----------
-  // level: 1-5, used for the signal bars
   superpowers: [
     {
-      name: "Frontend",
-      icon: "◆",
+      name: "Cloud & DevOps",
+      icon: "▲",
       level: 4,
-      items: ["HTML5", "CSS3", "JavaScript (ES6+)", "Responsive design", "Accessibility"],
-      blurb: "Hand-written, framework-free when the job doesn't need one.",
+      items: ["AWS (EC2, S3, Amplify, IAM)", "Google Cloud Platform", "Terraform", "Docker", "Jenkins", "GitHub Actions"],
+      blurb: "Infrastructure that survives contact with real users.",
     },
     {
-      name: "Cloud & AWS",
-      icon: "▲",
-      level: 3,
-      items: ["AWS Amplify Hosting", "IAM", "S3", "CloudFront", "AWS CLI"],
-      blurb: "Deploying real things to real infrastructure, not just localhost.",
+      name: "Full-Stack",
+      icon: "◆",
+      level: 5,
+      items: ["Next.js", "React", "TypeScript", "FastAPI", "Flutter", "PostgreSQL", "Supabase"],
+      blurb: "Shipped production apps on both web and mobile.",
     },
     {
       name: "Languages",
       icon: "■",
       level: 4,
-      items: ["Python", "JavaScript", "Java", "SQL"],
-      blurb: "Python for thinking, JavaScript for shipping.",
+      items: ["TypeScript", "Python", "C", "Dart", "Bash"],
+      blurb: "Python to think in, TypeScript to ship in, C to understand why.",
     },
     {
-      name: "Tooling",
+      name: "Systems & Open Source",
       icon: "●",
       level: 4,
-      items: ["Git & GitHub", "VS Code", "CLI / PowerShell", "npm"],
-      blurb: "The terminal is where the work actually happens.",
+      items: ["Compiler design", "Linux (Ubuntu, CentOS)", "Monorepos", "Turborepo", "Vitest"],
+      blurb: "Tokenizers, ASTs, and 383 tests I wrote on purpose.",
     },
   ],
 
-  // ---------- Projects & Achievements ----------
-  // id is what `cat <id>` uses in the terminal — keep it lowercase, no spaces
+  // ---------- Experience ----------
+  experience: [
+    {
+      title: "Full-Stack AI Intern",
+      org: "Vidh Labs",
+      date: "Sep 2026 — Present",
+      url: "https://vidh.co/",
+      bullets: [
+        "Architected an interactive Challenges CMS in Next.js and TypeScript, letting educators build and publish gamified quests for the learner mobile app.",
+        "Built real-time authoring workflows with TanStack Query optimistic caching and Cloud Run microservices integration.",
+      ],
+    },
+    {
+      title: "Full-Stack Developer (Intern)",
+      org: "Handover Expert",
+      date: "Nov 2025 — Jun 2026",
+      url: "https://handoverexpert.com/",
+      bullets: [
+        "Built a full-stack home inspection platform with Flutter and Python FastAPI, deployed on Google Cloud Platform.",
+        "Engineered a GCS signed-URL media upload pipeline, Alembic-managed PostgreSQL migrations, and branded multi-page PDF report generation.",
+      ],
+    },
+    {
+      title: "AWS Cloud Captain",
+      org: "AWS Cloud Club, MLRITM",
+      date: "Nov 2025 — Present",
+      url: "",
+      bullets: [
+        "Running sessions on AWS foundations and AI services, from Bedrock to developer tooling, for students on campus.",
+      ],
+    },
+    {
+      title: "Summer of AI Intern",
+      org: "Swecha Telangana",
+      date: "May 2024 — Jul 2024",
+      url: "",
+      bullets: [
+        "Trained an ML model to recognise and describe images and text covering local flora and fauna.",
+      ],
+    },
+  ],
+
+  // ---------- Projects ----------
   projects: [
+    {
+      id: "haptic",
+      name: "Haptic.js",
+      year: "2026",
+      status: "open source",
+      summary:
+        "A universal haptics engine for the web, with its own pattern language and a real compiler behind it.",
+      detail:
+        "HPL is a custom DSL with a genuine tokenizer, parser and compiler pipeline. One pattern string drives Android vibration, an iOS audio fallback and dual-motor gamepad rumble. Nine npm packages across React, Vue, Svelte, Angular, Web Components and React Native. 63+ presets, physics-based patterns, 383 tests, zero dependencies.",
+      stack: ["TypeScript", "Compiler Design", "Turborepo", "Vitest", "Web Audio API", "Gamepad API"],
+      links: [{ label: "Docs", url: "https://thirumaleshp.github.io/hapticjs/" }],
+      highlight: "Six months of compiler work for one line of API.",
+    },
+    {
+      id: "myclaw",
+      name: "My-Claw",
+      year: "2026",
+      status: "shipped",
+      summary:
+        "A SaaS platform that deploys personal AI assistants to Telegram, WhatsApp, Slack and Discord.",
+      detail:
+        "Per-user Docker container orchestration on AWS EC2, with a subdomain reverse proxy through Caddy, Cloudflare DNS, Firebase auth and automatic config management. The interesting problem was isolation: every user gets their own container and their own subdomain, provisioned without manual steps.",
+      stack: ["AWS EC2", "Docker", "TypeScript", "Python", "Caddy", "Firebase", "Cloudflare DNS"],
+      links: [{ label: "GitHub", url: "https://github.com/thirumaleshp/My-Claw" }],
+      highlight: "",
+    },
+    {
+      id: "pixume",
+      name: "Pixume",
+      year: "2026",
+      status: "live",
+      summary:
+        "Turns a PDF résumé into a personal website in seconds — AI extraction, custom URLs, privacy-first.",
+      detail:
+        "Upload a PDF, get a hosted site. AI-powered extraction with Groq and Llama Guard 3 for content safety, AWS S3 for storage, Redis for caching, Clerk for auth, and Zod schemas holding the parsing honest.",
+      stack: ["Next.js", "AWS S3", "Groq", "Redis", "Clerk", "Zod", "TanStack"],
+      links: [{ label: "Live", url: "https://pixume.me" }],
+      highlight: "",
+    },
+    {
+      id: "shiftlab",
+      name: "Shiftlab",
+      year: "2026",
+      status: "freelance",
+      summary:
+        "An AI personal-aesthetics app that reads facial features and body proportions to suggest styling.",
+      detail:
+        "Built end to end as a freelance project: React and Vite on the front, Gemini for the analysis, Firebase and Cloud Firestore behind it. The hard part was turning a model's output into advice that sounded like a person rather than a confidence score.",
+      stack: ["React", "TypeScript", "Vite", "Gemini AI", "Firebase", "Cloud Firestore"],
+      links: [{ label: "Live", url: "https://shiftlab.pages.dev/" }],
+      highlight: "",
+    },
     {
       id: "portfolio",
       name: "This Portfolio",
@@ -71,55 +163,39 @@ const CONTENT = {
       summary:
         "A framework-free portfolio with a working terminal built in, deployed globally on AWS Amplify Hosting.",
       detail:
-        "Zero dependencies, zero build step, one page. The terminal is a real command parser with history, tab completion and themes that re-skin the live site. Built for the AWS Student Builder Challenge.",
-      stack: ["HTML", "CSS", "JavaScript", "AWS Amplify"],
+        "Zero dependencies, zero build step, one page. The terminal is a real command parser with history, tab completion and themes that re-skin the live site. Deployed from the CLI using Amplify's manual deployment API.",
+      stack: ["HTML", "CSS", "JavaScript", "AWS Amplify", "CloudFront"],
       links: [],
-      highlight: "Try the terminal — press the backtick key.",
-    },
-    {
-      id: "TODO-project-2",
-      name: "TODO: Project Two",
-      year: "2026",
-      status: "shipped",
-      summary: "TODO: one line on what it does and who it's for.",
-      detail: "TODO: what you built, what was hard, what you'd do differently.",
-      stack: ["TODO", "TODO"],
-      links: [],
-      highlight: "",
-    },
-    {
-      id: "TODO-project-3",
-      name: "TODO: Project Three",
-      year: "2025",
-      status: "learning project",
-      summary: "TODO: one line on what it does.",
-      detail: "TODO: the story of building it.",
-      stack: ["TODO"],
-      links: [],
-      highlight: "",
+      highlight: "You're in it. Press the backtick key.",
     },
   ],
 
   achievements: [
-    "TODO: a certification, award, hackathon, or course you finished",
-    "TODO: something you're proud of that isn't code",
+    "Two pull requests merged into openclaw — one stopping unbounded session-file growth after compaction, one raising the agent-to-agent turn ceiling, both with regression tests.",
+    "AWS Cloud Captain, AWS Cloud Club MLRITM — running AWS foundations and AI sessions on campus.",
+    "Google Student Ambassador — mentoring peers on multimodal prompt design and responsible AI.",
+    "Co-Lead at AlgoBharat MLRITM, driving blockchain adoption through workshops and real-world builds.",
+    "Google Cloud Computing Foundations Certificate, Google AI Essentials, and NVIDIA's Transformer-Based NLP certification.",
+    "Author of Haptic.js — nine published npm packages and a DSL compiler, built in the open.",
   ],
 
-  // ---------- `superpower` command: random reveals ----------
+  // ---------- `superpower` command ----------
+  // These are drawn from your real work — edit the wording to sound like you.
   secrets: [
-    "I debug best at 2am. No idea why. The bugs seem friendlier.",
-    "TODO: a genuinely surprising fact about you",
-    "TODO: a hobby nobody expects",
-    "TODO: the weirdest thing you've ever built",
-    "My first program was a calculator that got the answers wrong. I kept it.",
+    "I wrote a compiler for a 200-line language so that one string could buzz a phone, rumble a gamepad, and fake it with audio on iPhone.",
+    "Haptic.js has 383 tests and zero dependencies. The tests took longer than the compiler did.",
+    "I'm an AWS Cloud Captain and a Google Student Ambassador at the same time. There's no rivalry. Mostly.",
+    "Two of my pull requests are merged into openclaw. One of them stops session files growing forever.",
+    "My daily driver is an 11th-gen i5 laptop running WSL2 and Docker. Constraints make you write leaner code.",
+    "I've shipped on both GCP and AWS and I still argue with myself about which edge network is faster.",
   ],
 
-  // ---------- AWS services used (for the judges) ----------
+  // ---------- AWS services used ----------
   awsStack: [
-    { service: "AWS Amplify Hosting", use: "Builds and serves the site globally over HTTPS with CI/CD on every git push." },
+    { service: "AWS Amplify Hosting", use: "Builds and serves this site globally over HTTPS. Deployed via Amplify's manual deployment API from the CLI." },
     { service: "Amazon CloudFront", use: "The CDN behind Amplify — caches the site at edge locations worldwide." },
-    { service: "AWS IAM", use: "Scoped credentials used to create and deploy the Amplify app from the CLI." },
-    { service: "AWS CLI", use: "Created the app and shipped the deployment without touching the console." },
+    { service: "AWS IAM", use: "Credentials authorising app creation and every deployment." },
+    { service: "AWS CLI", use: "Created the app, the branch and each deployment without touching the console." },
   ],
 };
 

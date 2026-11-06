@@ -18,6 +18,7 @@ It isn't a canned animation. It's a real command parser:
 | `whoami` | Identity card — name, role, school, contact |
 | `about` | The longer story |
 | `skills` / `skills <area>` | Tech superpowers with confidence bars; drill into one area |
+| `experience` | Roles, dates, and what I shipped at each |
 | `ls projects` | Directory listing of projects |
 | `cat <project>` | Reads a project in full — summary, detail, stack, links |
 | `superpower` | Dispenses one random thing you wouldn't guess about me |
@@ -57,7 +58,7 @@ Plus real shell behaviour: **↑/↓** walks command history, **Tab** completes 
 **No framework, no build step, zero dependencies.** Four files do the whole job:
 
 ```
-index.html        semantic markup, five sections
+index.html        semantic markup, six sections
 css/styles.css    design tokens + three full themes
 js/content.js     ALL personal data — edit this one file to change the site
 js/main.js        renders the page from content.js, nav, themes, scroll reveals
