@@ -2,7 +2,7 @@
 
 A personal portfolio site with a **working terminal** built into it, deployed globally on **AWS Amplify Hosting**.
 
-**Live site:** _(added after deploy)_
+**Live site:** https://main.d2kch2pensq2r2.amplifyapp.com
 
 ---
 
