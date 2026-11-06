@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thirumalesh — Student Developer & Cloud Builder</title>
+<meta name="description" content="Portfolio of Thirumalesh — student developer and cloud builder. Projects, skills, and a terminal you can actually type into. Hosted on AWS.">
+<meta name="color-scheme" content="dark light">
+
+<meta property="og:title" content="Thirumalesh — Student Developer & Cloud Builder">
+<meta property="og:description" content="Projects, skills, and a terminal you can actually type into.">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230a0e14'/><text y='70' x='18' font-size='56' font-family='monospace' fill='%2300e5a0'>&gt;_</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#about">Skip to content</a>
+
+<!-- ───────────── nav ───────────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top">
+      <span class="nav__prompt">&gt;_</span>
+      <span class="nav__brandname" data-bind="name">Thirumalesh</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#superpowers">Superpowers</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="nav__theme" id="themeToggle" type="button" aria-label="Switch theme">
+      <span class="nav__themedot"></span>
+      <span class="nav__themename" id="themeName">dark</span>
+    </button>
+
+    <button class="nav__burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ───────────── hero ───────────── -->
+  <section class="hero">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="wrap hero__inner">
+      <p class="hero__eyebrow">
+        <span class="hero__dot"></span>
+        <span data-bind="location">India</span> · available for internships
+      </p>
+
+      <h1 class="hero__title">
+        Hi, I'm <span class="hero__name" data-bind="name">Thirumalesh</span>.<br>
+        <span class="hero__typed" id="typedRole" aria-live="polite"></span><span class="hero__caret" aria-hidden="true"></span>
+      </h1>
+
+      <p class="hero__tagline" data-bind="tagline"></p>
+
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#projects">See my projects</a>
+        <button class="btn btn--ghost" type="button" data-open-terminal>
+          <span class="btn__key">`</span> Open terminal
+        </button>
+      </div>
+
+      <dl class="hero__stats" id="heroStats"></dl>
+    </div>
+  </section>
+
+  <!-- ───────────── about ───────────── -->
+  <section class="sec" id="about">
+    <div class="wrap">
+      <h2 class="sec__title"><span class="sec__num">01</span> About Me</h2>
+      <div class="about">
+        <div class="about__text" id="aboutText"></div>
+        <aside class="about__card">
+          <h3 class="about__cardtitle">whoami</h3>
+          <dl class="kv" id="aboutKv"></dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── superpowers ───────────── -->
+  <section class="sec sec--alt" id="superpowers">
+    <div class="wrap">
+      <h2 class="sec__title"><span class="sec__num">02</span> Tech Superpowers</h2>
+      <p class="sec__lede">What I reach for, and how confident I am reaching for it.</p>
+      <div class="powers" id="powers"></div>
+    </div>
+  </section>
+
+  <!-- ───────────── projects ───────────── -->
+  <section class="sec" id="projects">
+    <div class="wrap">
+      <h2 class="sec__title"><span class="sec__num">03</span> Projects &amp; Achievements</h2>
+      <p class="sec__lede">Things I built, including the learning projects — those taught me the most.</p>
+      <div class="projects" id="projects-grid"></div>
+
+      <h3 class="ach__title">Achievements</h3>
+      <ul class="ach" id="achievements"></ul>
+    </div>
+  </section>
+
+  <!-- ───────────── aws ───────────── -->
+  <section class="sec sec--alt" id="aws">
+    <div class="wrap">
+      <h2 class="sec__title"><span class="sec__num">04</span> Built on AWS</h2>
+      <p class="sec__lede">This site isn't a mockup — here's the infrastructure actually serving it to you.</p>
+      <div class="aws" id="awsStack"></div>
+    </div>
+  </section>
+
+  <!-- ───────────── contact ───────────── -->
+  <section class="sec" id="contact">
+    <div class="wrap contact">
+      <h2 class="sec__title"><span class="sec__num">05</span> Contact</h2>
+      <p class="contact__lede">Open to internships, collaborations, and conversations about anything cloud.</p>
+      <div class="contact__links" id="contactLinks"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <p>Built from scratch · no frameworks · hosted on AWS Amplify</p>
+    <p class="foot__hint">Psst — press <kbd>`</kbd> for the terminal.</p>
+  </div>
+</footer>
+
+<!-- ───────────── terminal hint pill ───────────── -->
+<button class="hint" id="hintPill" type="button" data-open-terminal aria-label="Open the interactive terminal">
+  <span class="hint__blink">&gt;_</span>
+  <span class="hint__text">press <kbd>`</kbd> to open terminal</span>
+</button>
+
+<!-- ───────────── terminal overlay ───────────── -->
+<div class="term" id="terminal" role="dialog" aria-modal="true" aria-label="Interactive terminal" hidden>
+  <div class="term__scrim" data-close-terminal></div>
+  <div class="term__win" role="document">
+    <div class="term__bar">
+      <div class="term__dots" aria-hidden="true">
+        <span class="term__dot term__dot--r" data-close-terminal title="Close"></span>
+        <span class="term__dot term__dot--y"></span>
+        <span class="term__dot term__dot--g"></span>
+      </div>
+      <span class="term__title">thiru@portfolio — ~/</span>
+      <button class="term__close" type="button" data-close-terminal aria-label="Close terminal">esc</button>
+    </div>
+    <div class="term__body" id="termBody" tabindex="-1"></div>
+    <form class="term__form" id="termForm" autocomplete="off">
+      <label class="term__ps1" for="termInput" aria-hidden="true">
+        <span class="term__user">thiru</span><span class="term__at">@</span><span class="term__host">portfolio</span><span class="term__colon">:</span><span class="term__cwd">~</span><span class="term__sig">$</span>
+      </label>
+      <input class="term__input" id="termInput" type="text" spellcheck="false" autocapitalize="off"
+             aria-label="Terminal command input" placeholder="type help">
+    </form>
+  </div>
+</div>
+
+<script src="js/content.js"></script>
+<script src="js/main.js"></script>
+<script src="js/terminal.js"></script>
+</body>
+</html>

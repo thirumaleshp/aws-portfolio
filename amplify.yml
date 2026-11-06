@@ -1,0 +1,14 @@
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - echo "No build step — this site is hand-written static HTML, CSS and JS."
+  artifacts:
+    baseDirectory: /
+    files:
+      - index.html
+      - css/**/*
+      - js/**/*
+  cache:
+    paths: []
