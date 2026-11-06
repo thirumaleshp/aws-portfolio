@@ -66,8 +66,14 @@
     return `<span class="tl--acc">${esc(k.padEnd(pad))}</span>${esc(v)}`;
   }
 
+  // how many monospace columns fit in the output pane right now
+  function cols() {
+    const w = (body.clientWidth || 600) - 32;
+    return Math.max(22, Math.min(54, Math.floor(w / 8.3)));
+  }
+
   function rule(label) {
-    const dash = "─".repeat(Math.max(2, 46 - label.length));
+    const dash = "─".repeat(Math.max(2, cols() - label.length - 4));
     return `<span class="tl--box">── ${esc(label)} ${dash}</span>`;
   }
 
@@ -362,9 +368,25 @@
 
   function banner() {
     const c = C();
-    line(`<span class="tl--acc">  ╭──────────────────────────────────────────────╮</span>`);
-    line(`<span class="tl--acc">  │</span>   <span class="tl--acc2">${esc((c.name || "portfolio").toLowerCase())}</span> :: interactive shell v1.0${" ".repeat(Math.max(1, 14 - (c.name || "").length))}<span class="tl--acc">│</span>`);
-    line(`<span class="tl--acc">  ╰──────────────────────────────────────────────╯</span>`);
+    const who = (c.name || "portfolio").toLowerCase();
+    const title = `${who} :: interactive shell v1.0`;
+    const w = cols();
+
+    if (w >= 46) {
+      // wide enough for the boxed banner
+      const inner = w - 4;
+      const pad = Math.max(1, inner - title.length - 3);
+      line(`<span class="tl--acc">  ╭${"─".repeat(inner)}╮</span>`);
+      line(
+        `<span class="tl--acc">  │</span>   <span class="tl--acc2">${esc(who)}</span> :: interactive shell v1.0` +
+        `${" ".repeat(pad)}<span class="tl--acc">│</span>`
+      );
+      line(`<span class="tl--acc">  ╰${"─".repeat(inner)}╯</span>`);
+    } else {
+      // narrow screens: no box art, it just overflows
+      line(`<span class="tl--acc2">${esc(who)}</span> <span class="tl--dim">:: shell v1.0</span>`);
+      line(`<span class="tl--acc">${"─".repeat(w)}</span>`);
+    }
     sp();
     line(`  Welcome. This is a real command parser, not a gimmick.`, "tl--dim");
     sp();
